@@ -6,16 +6,16 @@
 #if __name__ == "__main__":
  #   print "Hello World"
     
-class PlayerI(drobots.Player):  
+class Player1(drobots.player):  
     def win(self, current = None):
-	print("You win!")
+	print("You win! :)")
 	current.adapter.getCommunicator().shutdown()
 
     def lose(self, current = None):
-	print("Looser!")
+	print("You lose! :(")
 	current.adapter.getCommunicator().shutdown()
 
     def gameAbort(self, current = None):
-	print("Game aborted")
+	print("Game aborted...")
 	current.adapter.getCommunicator().shutdown()
 
