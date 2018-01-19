@@ -32,14 +32,8 @@ module drobots {
     void robotDestroyed();
   };
 
-  interface DetectorController {
-    void alert(Point pos, int enemies);
-  };
-
   interface Player {
     RobotController* makeController(Robot* bot);
-    DetectorController* makeDetectorController();
-    Point getMinePosition();
     void win();
     void lose();
     void gameAbort();
@@ -50,15 +44,14 @@ module drobots {
   exception InvalidName{
     string reason;
   };
-  exception BadNumberOfPlayers{};
 
   interface Game {
     void login(Player* p, string nick)
       throws GameInProgress, InvalidProxy, InvalidName;
   };
 
-  interface GameFactory {
-    Game* makeGame(string gameName, int numPlayers)
-      throws InvalidName, BadNumberOfPlayers;
+  interface factory{
+    RobotController* make(Robot* bot, int cont);
   };
 };
+

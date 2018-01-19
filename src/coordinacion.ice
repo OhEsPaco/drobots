@@ -1,6 +1,7 @@
+
 module drobots2{
 
-  interface Communication{
+  interface Coordinacion{
     void EnemigoDetec(int angulo);
     void NoEnemy();
   };
