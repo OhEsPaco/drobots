@@ -1,6 +1,6 @@
-#include <drobots.ice>
+// -*- mode:c++ -*-
 
-module Services {
+module services {
   exception AlreadyExists { string key; };
   exception NoSuchKey { string key; };
 
@@ -10,6 +10,5 @@ module Services {
     void link(string key, Object* proxy) throws AlreadyExists;
     void unlink(string key) throws NoSuchKey;
     ObjectPrxDict list();
-    ObjectPrxDict listR();
   };
 };

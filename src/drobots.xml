@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- This file was written by IceGrid Admin -->
+<icegrid>
+   <application name="drobots">
+      <node name="node1">
+         <server id="Cliente" activation="always" exe="./Cliente.py">
+            <properties>
+               <property name="Proxy_game" value="drobots5"/>
+               <property name="Proxy_game.Locator" value="IceGrid/Locator -t:tcp -h atclab.esi.uclm.es -p 4061"/>
+            </properties>
+            <adapter name="Player_Adapter" endpoints="tcp">
+            </adapter>
+         </server>
+         <server id="Container" activation="always" exe="./Container.py">
+            <properties>
+            </properties>
+            <adapter name="Container_Adapter" endpoints="tcp" id="${server}.Container_Adapter">
+               <object identity="Container" type="::services::Container" property="Identity"/>
+            </adapter>
+         </server>
+         <server id="Factory1" activation="always" exe="./Factory.py">
+            <properties>
+            </properties>
+            <adapter name="Factory_Adapter" endpoints="tcp" id="${server}.Factory_Adapter">
+               <object identity="Factory1" type="::drobots::Factory" property="Identity"/>
+            </adapter>
+         </server>
+      </node>
+      <node name="node2">
+         <server id="Factory2" activation="always" exe="./Factory.py">
+            <properties>
+            </properties>
+            <adapter name="Factory_Adapter" endpoints="tcp" id="${server}.Factory_Adapter">
+               <object identity="Factory2" type="::drobots::Factory" property="Identity"/>
+            </adapter>
+         </server>
+      </node>
+      <node name="node3">
+         <server id="Factory3" activation="always" exe="./Factory.py">
+            <properties>
+            </properties>
+            <adapter name="Factory_Adapter" endpoints="tcp" id="${server}.Factory_Adapter">
+               <object identity="Factory3" type="::drobots::Factory" property="Identity"/>
+            </adapter>
+         </server>
+      </node>
+      <node name="node4">
+         <server id="ClientePrueba" activation="always" exe="./ClientePrueba.py">
+            <properties>
+               <property name="Proxy_game" value="drobots5"/>
+               <property name="Proxy_game.Locator" value="IceGrid/Locator -t:tcp -h atclab.esi.uclm.es -p 4061"/>
+            </properties>
+            <adapter name="Player_AdapterP" endpoints="tcp">
+            </adapter>
+         </server>
+      </node>
+   </application>
+</icegrid>
