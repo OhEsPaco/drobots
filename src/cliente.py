@@ -21,6 +21,14 @@ class Player(drobots.Player):
         self.con1=sorv
         self.contadorCreados = 0
         self.contadorRobots=0
+        self.detector_controller = None
+        self.mine_index = 0
+        self.mines = [
+            drobots.Point(x=randint(0, 199), y=randint(0, 199)),
+            drobots.Point(x=randint(200, 399), y=randint(0, 199)),
+            drobots.Point(x=randint(0, 199), y=randint(200, 399)),
+            drobots.Point(x=randint(200, 399), y=randint(200, 399)),
+        ]
     def win(self, current=None):
         print("Has ganado")
         current.adapter.getCommunicator().shutdown()

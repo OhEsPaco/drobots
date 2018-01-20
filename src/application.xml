@@ -9,7 +9,7 @@
               <property name="Game.Locator" value="IceGrid/Locator -t:tcp -h atclab.esi.uclm.es -p 4061"/>
           </properties>
 	    <adapter name="PlayerAdapter" endpoints="tcp">
-	        <object identity="Barbassss" type="::drobots::Player" property="Identity"/>
+	        <object identity="Paco" type="::drobots::Player" property="Identity"/>
 	    </adapter>
          <adapter name="ContainerAdapter" endpoints="tcp">
             <object identity="Container" type="::Services::Container" property="Identity"/>
